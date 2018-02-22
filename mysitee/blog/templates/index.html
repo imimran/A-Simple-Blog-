@@ -1,0 +1,19 @@
+
+{% extends 'master.html' %}
+
+{% block content %}
+
+  <div class="posts">
+ {% for post in posts %}
+   <div class="post"> 
+   	<a href="{% url 'view_post' pk=post.pk %}"><h3> 
+   	{{ post.title }} </h3></a>
+   	{% include 'category.html' %}
+     <h6> {{ post.posttime }} </h6>
+    <p> {{ post.text |truncatewords:50 }} </p>
+    </div>
+{% endfor %}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,6 @@
+{% if post.category %}
+    <h6> Category: <a href="/blog/?category={{ post.category.pk }}">
+    {{ post.category }} 
+     </a>
+     </h6>
+    {% endif %}
